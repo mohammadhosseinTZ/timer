@@ -1,0 +1,71 @@
+@font-face {
+  font-family: yekanBakh;
+  src: url("./font/Yekan-Bakh-FaNum-04-Regular\ \(2\).woff");
+}
+.container {
+  width: 98%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  font-family: yekanBakh;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.mot-timer-wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.mot-timer-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+@keyframes fade {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 0;
+    scale: 0 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(360deg);
+    scale: 1 1;
+  }
+}
+.active {
+  animation: fade 0.3s linear forwards;
+}
+.mot-timer-wrapper .timer span {
+  display: inline-block;
+}
+.mot-timer-wrapper .timer {
+  color: black;
+  background-color: white;
+  perspective: 900px !important;
+  margin-right: 2px;
+  padding: 5px;
+  border-radius: 6px;
+  font-weight: 600;
+  width: 22px !important;
+  text-align: center;
+  display: inline-block;
+}
+.mot-timer-wrapper .title {
+  padding-top: 10px;
+}
+header {
+  padding: 10px;
+  background-color: rgb(255, 233, 156);
+}
+header .mot-title {
+  text-align: end;
+}
