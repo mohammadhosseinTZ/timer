@@ -16,8 +16,12 @@ $(document).ready(function () {
   $(".mot-timer-wrapper .min .timer:nth-of-type(2) span").text(pad(min)[0]);
   $(".mot-timer-wrapper .hour .timer:nth-of-type(2) span").text(pad(hour)[0]);
   $(".mot-timer-wrapper .day .timer:nth-of-type(2) span").text(pad(day)[0]);
-});
-function createTimer() {
+  $(".iconClose").click(function(){
+
+    $("header").slideUp();
+
+  })
+  function createTimer() {
   const secInterval = setInterval(() => {
     if (sec > 0) sec--;
     else {
@@ -68,7 +72,7 @@ function checkDay() {
 }
 
 function updateTimer(className , name , prevNum) {
-console.log(prevNum);
+
   $(`.mot-timer-wrapper .timer span`).each(function(){
     $(this).removeClass("active")
   })
@@ -86,15 +90,23 @@ console.log(prevNum);
 
 
   }
-setTimeout(() => {
+  setTimeout(() => {
   
-  $(`.mot-timer-wrapper ${className} .timer:nth-of-type(1) span`).addClass("active");
-}, 1000);
+    $(`.mot-timer-wrapper ${className} .timer:nth-of-type(1) span`).addClass("active");
+  }, 1000);
   
   $(`.mot-timer-wrapper ${className} .timer:nth-of-type(1) span`).text(pad(name)[1]);
+  
+
 }
+
+
+
+
+createTimer();
+});
 
 function pad(num) {
   return num < 10 ? "0" + num.toString() : num.toString();
 }
-createTimer();
+
