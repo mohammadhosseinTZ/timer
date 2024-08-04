@@ -291,6 +291,14 @@ footer .links {
   align-items: start;
   padding: 1.7rem;
 }
+.links .wrapper ul li:not(.list-container){
+  display: none;
+}
+@media screen and (min-width: 576px){
+  .links .wrapper ul li:not(.list-container){
+    display: block ;
+  }
+}
 @media screen and (min-width: 1024px) {
   footer .links {
     padding: 1.7rem 64px;
