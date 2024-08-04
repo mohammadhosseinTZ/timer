@@ -239,14 +239,13 @@ header .myTimer .mot-title {
 }
 
 /* footer */
-footer {
-}
+
 footer .banner {
   background-color: rgb(249 251 253);
   padding: 2rem 0px;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 footer .banner .item {
@@ -254,6 +253,7 @@ footer .banner .item {
   flex-direction: column;
   align-items: center;
   padding-bottom: 1.5rem;
+  width: calc(100% / 2);
 }
 footer .banner .item img {
   max-width: 60px;
@@ -275,12 +275,13 @@ footer .banner .item .title {
     padding: auto 4rem;
   }
   footer .banner .item {
-    padding: 0px 1.5rem;
+    width: calc(100% / 3);
   }
 }
 @media screen and (min-width: 1024px) {
   footer .banner .item {
     padding: 0px 36px;
+    width: auto;
   }
 }
 /* links */
@@ -291,12 +292,16 @@ footer .links {
   align-items: start;
   padding: 1.7rem;
 }
-.links .wrapper ul li:not(.list-container){
+.links .wrapper ul li:not(.list-container) {
   display: none;
 }
-@media screen and (min-width: 576px){
-  .links .wrapper ul li:not(.list-container){
-    display: block ;
+@media screen and (min-width: 576px) {
+  .links .wrapper ul li:not(.list-container) {
+    display: flex;
+    justify-content: start;
+  }
+  .title-arrow {
+    display: none;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -339,7 +344,7 @@ footer .links .wrapper .list-item {
 }
 footer .links .list-item .more {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   font-weight: 400;
   color: gray;
@@ -399,6 +404,9 @@ footer .symbols {
   footer .aboutUs-wrapper {
     width: 40%;
   }
+  footer .lists .link {
+    width: auto !important;
+  }
 }
 @media screen and (min-width: 576px) {
   footer .symbols {
@@ -424,9 +432,12 @@ footer .lists ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
 }
 footer .lists .link {
   color: #52565c;
+  width: calc(100% / 2);
   text-decoration: none;
   font-weight: 400;
   line-height: 1.25rem;
@@ -435,6 +446,7 @@ footer .lists .link {
 }
 footer .lists .link li {
   padding: 1.25rem;
+  text-align: center;
 }
 @media screen and (min-width: 576px) {
   footer .lists ul {
@@ -445,6 +457,9 @@ footer .lists .link li {
   }
   footer .lists .link li {
     padding: 0.5rem 1.25rem;
+  }
+  footer .lists .link {
+    width: calc(100% / 4);
   }
 }
 /* copyRight */
